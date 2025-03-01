@@ -5,6 +5,103 @@
      <link rel="icon" href="../images/mall-logo.png">
      <link rel="stylesheet" href="../style.css">
      <title>فعاليات</title>
+     <style>
+      .events-container {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 2rem;
+          padding: 2rem;
+      }
+
+      .activity-card {
+          width: 350px;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: transform 0.3s, box-shadow 0.3s;
+          background: white;
+          margin-bottom: 2rem;
+      }
+
+      .activity-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+
+      .activity-image-container {
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+      }
+
+      .activity-image {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          transition: transform 0.3s;
+      }
+
+      .activity-image-container:hover .activity-image {
+          transform: scale(1.1);
+      }
+
+      .activity-content {
+          padding: 1.5rem;
+      }
+
+      .activity-title {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: #333;
+      }
+
+      .activity-description {
+          color: #666;
+          line-height: 1.6;
+          margin-bottom: 1rem;
+      }
+
+      .activity-date {
+          color: #e31837;
+          font-weight: bold;
+          margin-bottom: 1rem;
+      }
+
+      .register-btn {
+          display: inline-block;
+          padding: 0.8rem 1.5rem;
+          background-color: #e31837;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+      }
+
+      .register-btn:hover {
+          background-color: #c41230;
+      }
+
+      /* Modal styles */
+      .modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.9);
+          z-index: 1000;
+      }
+
+      .modal-content {
+          margin: auto;
+          display: block;
+          max-width: 90%;
+          max-height: 90vh;
+          margin-top: 2%;
+      }
+  </style>
 </head>
 <body>
 
@@ -37,7 +134,82 @@
         </ul>
       </div>
    </header>
-  <!-- End Header -->
+  
+   <div class="events-container">
+    <article class="activity-card">
+        <div class="activity-image-container">
+            <img src="../images/lantern.jpg" alt="مهرجان التخفيضات" class="activity-image">
+        </div>
+        <div class="activity-content">
+            <h3 class="activity-title">مهرجان التخفيضات</h3>
+            <p class="activity-description">تخفيضات حصرية تصل إلى 70% على جميع المنتجات في كارفور مول. فرصة ذهبية للتسوق بأسعار مميزة!</p>
+            <p class="activity-date">15-30 مارس 2025</p>
+            <a href="https://forms.carrefour.com/festival-registration" class="register-btn">سجل الآن</a>
+        </div>
+    </article>
+
+    <article class="activity-card">
+        <div class="activity-image-container">
+            <img src="../images/carnival.jpg" alt="كرنفال العائلة" class="activity-image">
+        </div>
+        <div class="activity-content">
+            <h3 class="activity-title">كرنفال العائلة</h3>
+            <p class="activity-description">أنشطة ترفيهية للعائلة بأكملها! ألعاب، مسابقات، وجوائز قيمة تنتظركم في كرنفال العائلة السنوي.</p>
+            <p class="activity-date">5-7 أبريل 2025</p>
+            <a href="https://forms.carrefour.com/carnival-registration" class="register-btn">سجل الآن</a>
+        </div>
+    </article>
+
+    <article class="activity-card">
+        <div class="activity-image-container">
+            <img src="../images/cultre.jpg" alt="الملتقى الثقافي" class="activity-image">
+        </div>
+        <div class="activity-content">
+            <h3 class="activity-title">الملتقى الثقافي</h3>
+            <p class="activity-description">معرض ثقافي يجمع الفنون والأدب والتراث. أمسيات شعرية، معارض فنية، وورش عمل متنوعة.</p>
+            <p class="activity-date">20-25 أبريل 2025</p>
+            <a href="https://forms.carrefour.com/cultural-registration" class="register-btn">سجل الآن</a>
+        </div>
+    </article>
+</div>
+
+    <!-- Modal for image preview -->
+    <div id="imageModal" class="modal">
+        <img class="modal-content" id="modalImage">
+    </div>
+
+  <script>
+    // Image preview functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    document.querySelectorAll('.activity-image-container').forEach(container => {
+        const img = container.querySelector('.activity-image');
+        
+        container.addEventListener('click', () => {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        });
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    // Prevent modal from closing when clicking on the image
+    modalImg.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modal.style.display = "none";
+        }
+    });
+</script>
 
 </body>
 </html>
+
