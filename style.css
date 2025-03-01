@@ -409,6 +409,7 @@ header .links .ul-2 li a:hover {
 .templates .main .temp a {
     color: var(--greenColor);
     text-shadow: 0px 0px 10px var(--greenColor);
+    
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -675,6 +676,7 @@ header .links .ul-2 li a:hover {
 /* Start Footer */
 footer {
     height: 25vh;
+    width: 100%;
     background-color: rgb(212, 211, 211);
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -779,3 +781,6 @@ footer .logo img {
 }
 
 /* End Footer */
+
+
+
