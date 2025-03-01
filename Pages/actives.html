@@ -121,6 +121,32 @@
             max-height: 90vh;
             margin-top: 2%;
         }
+
+        .booking-btn {
+            background-color: #887f40;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            width: 150px;
+        }
+
+        .booking-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .booking-btn.booked {
+            background-color: #FFE000;
+            cursor: default;
+        }
+
   </style>
 </head>
 <body>
@@ -185,6 +211,7 @@
                     <span>ساحة المول الخارجية - منطقة الألعاب</span>
                 </div>
                 <p class="activity-description">أنشطة ترفيهية للعائلة بأكملها! ألعاب، مسابقات، وجوائز قيمة. يتضمن الكرنفال عروض سحرية، وجه الرسم، نطاطات للأطفال، وركن خاص للمأكولات والحلويات. مناسب لجميع الأعمار.</p>
+                <button class="booking-btn">احجز الآن</button>
             </div>
         </article>
 
@@ -199,6 +226,7 @@
                     <span>الطابق الثاني - قاعة المؤتمرات</span>
                 </div>
                 <p class="activity-description">معرض ثقافي يجمع الفنون والأدب والتراث. يتضمن أمسيات شعرية، معارض فنية، وورش عمل متنوعة. فرصة للتعرف على الثقافات المختلفة وحضور ندوات ثقافية متنوعة مع نخبة من المثقفين والفنانين.</p>
+                <button class="booking-btn">احجز الآن</button>
             </div>
         </article>
     </div>
@@ -237,6 +265,16 @@
         if (e.key === 'Escape') {
             modal.style.display = "none";
         }
+    });
+
+    // Booking buttons functionality
+    document.querySelectorAll('.booking-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            if (!this.classList.contains('booked')) {
+                this.textContent = '✓ تم الحجز';
+                this.classList.add('booked');
+            }
+        });
     });
 </script>
 

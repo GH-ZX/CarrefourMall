@@ -586,35 +586,42 @@ header .links .ul-2 li a:hover {
     width: 350px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px 0px black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .active .cards .card:hover {
-    transform: scale(1,1);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .active .cards .card .background {
-    width: 350px;
+    width: 100%;
     height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-.active .cards .card:nth-child(1) .background:nth-child(1) {
-    background-image: url("images/cultre.jpg")
+.active .cards .card:nth-child(1) .background {
+    background-image: url("images/cultre.jpg");
 }
 
-.active .cards .card:nth-child(2) .background:nth-child(1) {
-    background-image: url("images/carnival.jpg")
+.active .cards .card:nth-child(2) .background {
+    background-image: url("images/carnival.jpg");
 }
 
-.active .cards .card:nth-child(3) .background:nth-child(1) {
-    background-image: url("images/lantern.jpg")
+.active .cards .card:nth-child(3) .background {
+    background-image: url("images/lantern.jpg");
+}
+
+.active .cards .card:hover .background {
+    transform: scale(1.1);
 }
 
 .active .cards .card .info {
@@ -666,18 +673,189 @@ header .links .ul-2 li a:hover {
 }
 /* End Active Section */
 
-/* Start Active Section */
+/* Start Offers Section */
 .Offers {
-    height: 100vh;
-    background-color: blueviolet;
+    height: auto;
+    min-height: 100vh;
+    background-color: #f3f0ff;
+    padding: 2rem 0;
 }
-/* End Active Section */
+
+.offers-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.offers-title h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--blueColor);
+    margin-bottom: 0.5rem;
+}
+
+.offers-title p {
+    color: #666;
+    font-size: 18px;
+}
+
+.carousel-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #8a7fb9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Add Carousel Section Styles */
+.carousel-section {
+    padding: 2rem;
+    position: relative;
+    background: #f8f8f8;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.product-card {
+    flex: 0 0 280px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.discounted-price {
+    color: #e31837;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cart-btn, .details-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn {
+    background: #FFE000;
+    color: white;
+}
+
+.details-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.cart-btn:hover {
+    background: #b3a430;
+}
+
+.details-btn:hover {
+    background: #e0e0e0;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.prev-btn {
+    left: 1rem;
+}
+
+.next-btn {
+    right: 1rem;
+}
+
+.carousel-button:hover {
+    background: rgba(0,0,0,0.7);
+}
 
 /* Start Footer */
 footer {
     height: 25vh;
     width: 100%;
-    background-color: rgb(212, 211, 211);
+    background-color: rgb(182, 182, 182);
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-areas: Social Social Social Social links links links links links logo logo logo;
