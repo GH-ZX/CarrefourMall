@@ -698,29 +698,7 @@ header .links .ul-2 li a:hover {
     background-image: url("images/lantern.jpg");
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .active .cards {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .active .cards .card {
-        width: 100%;
-        max-width: 500px;
-    }
-}
-
-@media (max-width: 576px) {
-    .active .cards .card .background {
-        height: 200px;
-    }
-
-    .active .words h2 {
-        width: 250px;
-        font-size: 28px;
-    }
-}
 
 /* ============================
    8. Offers Section
@@ -1070,6 +1048,15 @@ footer .logo img {
 }
 
 @media (max-width: 992px) {
+    .active .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .cards .card {
+        width: 100%;
+        max-width: 500px;
+    }
     header {
         grid-template-columns: 1fr auto;
         grid-template-areas: "log-tit log-img";
@@ -1158,6 +1145,14 @@ footer .logo img {
 }
 
 @media (max-width: 576px) {
+    .active .cards .card .background {
+        height: 200px;
+    }
+
+    .active .words h2 {
+        width: 250px;
+        font-size: 28px;
+    }
     header {
         grid-template-columns: auto auto;
         grid-template-areas: "log-tit log-img";
