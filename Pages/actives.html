@@ -148,23 +148,7 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 1400px) {
-            .activity-card {
-                flex-direction: column;
-            }
-
-            .activity-image-container {
-                flex: 0 0 350px;
-            }
-
-            .activity-content {
-                padding: 1.8rem;
-            }
-
-            .activity-title {
-                font-size: 1.7rem;
-            }
-        }
+    
         @media (max-width: 1200px) {
             .activity-card {
                 flex-direction: column;
@@ -185,18 +169,31 @@
         @media (max-width: 768px) {
             .activity-card {
                 flex-direction: column;
+                width: 95%; /* Make the card take up almost the whole screen */
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .activity-image-container {
-                flex: 0 0 250px;
+                flex: 0 0 300px; /* Increased for better visibility */
+                width: 100%;
             }
 
             .activity-content {
-                padding: 1rem;
+                padding: 1.5rem;
             }
 
             .activity-title {
-                font-size: 1.5rem;
+                font-size: 2rem; /* Increased font size */
+            }
+
+            .activity-description {
+                font-size: 1.2rem; /* Increased font size */
+            }
+
+            .booking-btn {
+                font-size: 1.3rem; /* Increased font size */
+                width: 200px; /* Increased button width */
             }
         }
 
@@ -215,6 +212,29 @@
 
             .activity-description {
                 font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .activity-image-container {
+                flex: 0 0 200px; /* Further adjustments for smaller screens */
+            }
+
+            .activity-title {
+                font-size: 1.7rem; /* Further adjustments for smaller screens */
+            }
+
+            .activity-description {
+                font-size: 1.1rem; /* Further adjustments for smaller screens */
+            }
+
+            .coupon-code {
+                font-size: 1.2rem; /* Increased coupon code size */
+            }
+
+            .booking-btn {
+                font-size: 1.2rem; /* Increased booking button size */
+                width: 100%; /* Make button full width */
             }
         }
 
