@@ -1,5 +1,9 @@
+/* ============================
+   1. Imports & Basic Setup
+   ============================ */
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
+/* Reset & Base Styles */
 * {
     font-family: 'Almarai', sans-serif;
     padding: 0;
@@ -8,32 +12,49 @@
     box-sizing: border-box;
 }
 
-/* Colors Variables */
+/* Variables */
 :root {
+    /* Colors */
     --blueColor: #00008F;
     --yellowColor: #FFE000;
     --greenColor: rgb(0, 255, 0);
     --whiteColor: rgb(239, 245, 243);
     --grayColor: rgb(62, 83, 76);
     --blue-gry-Color: rgb(122, 122, 255);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
 }
 
-/* a link styles */
+/* Global Styles */
+body {
+    background-color: var(--whiteColor);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .btn {
     display: inline-block;
     text-decoration: none;
     text-align: center;
     align-content: center;
-    transition: 0.2s ease;
+    transition: var(--transition-fast);
 }
 
-body {
-    background-color: var(--whiteColor);
-    max-width: 1400px; 
-    margin: 0 auto;    
-}
-
-/* Start Header */
+/* ============================
+   2. Header Styles
+   ============================ */
 header {
     height: 80px;
     display: grid;
@@ -157,9 +178,10 @@ header .links .ul-2 li a:hover {
     padding-right: 20px;
     background-color: var(--grayColor);
 }
-/* End Header */
 
-/* Start Main Section */
+/* ============================
+   3. Main Section
+   ============================ */
 .main-section {
     height: 89vh;
     display: grid;
@@ -288,75 +310,10 @@ header .links .ul-2 li a:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-/* End Main Section */
 
-/* Start Mall Section */
-.mall-section {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-areas: left left left left left right right right right right;
-}
-
-.mall-section .left {
-    grid-area: left;
-    grid-column: 1 / 6;
-    background-color: #00008F;
-    height: 65vh;
-    margin-left: 60px;
-    text-align: right;
-}
-
-.mall-section .left h2,
-.mall-section .left .desc,
-.mall-section .left a {
-    margin: 50px;
-    font-weight: bold;
-}
-.mall-section .left h2 {
-    color: var(--yellowColor);
-    font-size: 25px;
-    letter-spacing: 1px;
-    top: 20px;
-}
-
-.mall-section .left .desc {
-    color: white;
-    font-size: 18px;
-    letter-spacing: 1px;
-    line-height: 2;
-}
-
-.mall-section .left a {
-    width: 80px;
-    height: 40px;
-    color: white;
-    background-color: var(--yellowColor);
-    border-radius: 10px;
-    font-size: 16;
-    margin-top: -30px;
-}
-
-.mall-section .left a:hover {
-    color: var(--yellowColor);
-    background-color: var(--whiteColor);
-    transform: scale(1.1);
-    box-shadow: 0px 0px 3px 0px black;
-}
-
-.mall-section .right {
-    grid-area: right;
-    grid-column: 6 / 11;
-    height: 65vh;
-    margin-right: 60px;
-    background-image: url(images/mall\ from\ inside.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-/* End Mall Section */
-
-/* Start Templates Section */
+/* ============================
+   4. Templates Section
+   ============================ */
 .templates {
     height: 100vh;
     align-content: center;
@@ -374,7 +331,7 @@ header .links .ul-2 li a:hover {
     font-weight: bold;
     margin: 10px auto;
     padding: 5px;
-    color: var(--blueColor);
+    color: var (--blueColor);
     background-color: var(--greenColor);
     width: 300px;
     border-radius: 300px 1000px;
@@ -462,9 +419,77 @@ header .links .ul-2 li a:hover {
 .templates .main .temp:nth-child(8) {
     background-image: url("images/clothes-section-1.jpg");
 }
-/* End Templates Section */
 
-/*  Start Position Section */
+/* ============================
+   5. Mall Section
+   ============================ */
+.mall-section {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-areas: left left left left left right right right right right;
+}
+
+.mall-section .left {
+    grid-area: left;
+    grid-column: 1 / 6;
+    background-color: #00008F;
+    height: 65vh;
+    margin-left: 60px;
+    text-align: right;
+}
+
+.mall-section .left h2,
+.mall-section .left .desc,
+.mall-section .left a {
+    margin: 50px;
+    font-weight: bold;
+}
+.mall-section .left h2 {
+    color: var(--yellowColor);
+    font-size: 25px;
+    letter-spacing: 1px;
+    top: 20px;
+}
+
+.mall-section .left .desc {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.mall-section .left a {
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: var(--yellowColor);
+    border-radius: 10px;
+    font-size: 16;
+    margin-top: -30px;
+}
+
+.mall-section .left a:hover {
+    color: var(--yellowColor);
+    background-color: var(--whiteColor);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 3px 0px black;
+}
+
+.mall-section .right {
+    grid-area: right;
+    grid-column: 6 / 11;
+    height: 65vh;
+    margin-right: 60px;
+    background-image: url(images/mall\ from\ inside.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ============================
+   6. Position Section
+   ============================ */
 .position {
     height: 100vh;
     display: grid;
@@ -549,73 +574,118 @@ header .links .ul-2 li a:hover {
     color: var(--blueColor);
     background-color: var(--yellowColor);
 }
-/*  End Position Section */
 
-/* Start Active Section */
+/* ============================
+   7. Activities Section
+   ============================ */
 .active {
-    margin-top: 100px;
-    min-height: 150vh; /* تعديل الارتفاع */
+    margin-top: 50px;
     padding: 40px 0;
+    background-color: var(--whiteColor);
 }
 
+/* Title Styles */
 .active .words {
     text-align: center;
-    align-content: center;
-    height: 20vh;
+    margin-bottom: 40px;
 }
 
 .active .words h2 {
     font-size: 35px;
     font-weight: bold;
-    margin: 10px auto;
-    padding: 5px;
     color: var(--blueColor);
     background-color: var(--greenColor);
     width: 300px;
+    margin: 0 auto 15px;
+    padding: 10px;
     border-radius: 300px 1000px;
 }
- 
+
 .active .words .desc {
     font-size: 20px;
     font-weight: bold;
-    margin: 10px;
     color: var(--greenColor);
 }
 
+/* Cards Container */
 .active .cards {
     display: flex;
     justify-content: center;
-    align-items: stretch;
     gap: 30px;
-    padding: 40px;
-    min-height: 700px; /* تعديل الارتفاع */
+    padding: 20px 40px;
     background-color: var(--blue-gry-Color);
+    border-radius: var(--radius-lg);
 }
 
+/* Individual Card */
 .active .cards .card {
     flex: 1;
-    min-width: 300px;
-    max-width: 380px;
-    height: 600px; /* تحديد ارتفاع ثابت */
-    display: flex;
-    flex-direction: column;
+    max-width: 350px;
     background: var(--whiteColor);
-    border-radius: 15px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.active .cards .card:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Card Background Image */
+.active .cards .card .background {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
     transition: all 0.3s ease;
 }
 
-.active .cards .card .background {
-    width: 100%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
+.active .cards .card:hover .background {
+    transform: scale(1.1);
 }
 
-/* حذف pseudo-element وتعيين الخلفيات مباشرة */
+/* Card Content */
+.active .cards .card .info {
+    padding: 25px;
+    background: linear-gradient(to bottom, transparent, var(--whiteColor));
+}
+
+.active .cards .card .info h2 {
+    color: var(--blueColor);
+    font-size: 24px;
+    margin-bottom: 15px;
+    transition: color 0.2s ease;
+}
+
+.active .cards .card:hover .info h2 {
+    color: var(--yellowColor);
+}
+
+.active .cards .card .info .desc {
+    color: var(--grayColor);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.active .cards .card .info a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--blueColor);
+    color: var(--yellowColor);
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.active .cards .card .info a:hover {
+    background-color: var(--yellowColor);
+    color: var(--blueColor);
+    transform: translateX(-5px);
+}
+
+/* Card Background Images */
 .active .cards .card:nth-child(1) .background {
     background-image: url("images/cultre.jpg");
 }
@@ -628,85 +698,33 @@ header .links .ul-2 li a:hover {
     background-image: url("images/lantern.jpg");
 }
 
-.active .cards .card:hover .background {
-    transform: scale(1.1);
-}
-
-.active .cards .card .info {
-    flex: 1;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.active .cards .card .info h2 {
-    color: var(--blueColor);
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.active .cards .card .info .desc {
-    color: var(--grayColor);
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.active .cards .card .info a {
-    display: inline-block;
-    padding: 10px 30px;
-    background-color: var(--blueColor);
-    color: var(--yellowColor);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.active .cards .card:hover {
-    transform: translateY(-10px);
-}
-
-.active .cards .card:hover .background::before {
-    transform: scale(1.1);
-}
-
+/* Responsive Design */
 @media (max-width: 992px) {
-    .active {
-        min-height: auto;
-        padding: 20px 0;
-    }
-
     .active .cards {
         flex-direction: column;
-        min-height: auto;
-        padding: 20px;
+        align-items: center;
     }
 
     .active .cards .card {
         width: 100%;
         max-width: 500px;
-        height: auto;
-        min-height: 550px;
-        margin: 0 auto 30px;
-    }
-
-    .active .cards .card .background {
-        height: 250px;
     }
 }
 
 @media (max-width: 576px) {
-    .active .cards .card {
-        min-height: 500px;
-    }
-
     .active .cards .card .background {
         height: 200px;
     }
-}
-/* End Active Section */
 
-/* Start Offers Section */
+    .active .words h2 {
+        width: 250px;
+        font-size: 28px;
+    }
+}
+
+/* ============================
+   8. Offers Section
+   ============================ */
 .Offers {
     height: auto;
     min-height: 100vh;
@@ -731,6 +749,9 @@ header .links .ul-2 li a:hover {
     font-size: 18px;
 }
 
+/* ============================
+   9. Carousel Components
+   ============================ */
 .carousel-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -756,7 +777,7 @@ header .links .ul-2 li a:hover {
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
     gap: 1rem;
     padding: 1rem;
 }
@@ -767,7 +788,7 @@ header .links .ul-2 li a:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .product-card:hover {
@@ -785,7 +806,7 @@ header .links .ul-2 li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .product-card:hover .product-image img {
@@ -837,7 +858,7 @@ header .links .ul-2 li a:hover {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 .cart-btn {
@@ -884,7 +905,9 @@ header .links .ul-2 li a:hover {
     background: rgba(0,0,0,0.7);
 }
 
-/* Start Footer */
+/* ============================
+   10. Footer
+   ============================ */
 footer {
     height: 25vh;
     width: 100%;
@@ -991,9 +1014,9 @@ footer .logo img {
     top: 25%;
 }
 
-/* End Footer */
-
-/* Responsive Design */
+/* ============================
+   11. Responsive Design
+   ============================ */
 @media (max-width: 1200px) {
     body {
         max-width: 100%;
@@ -1076,8 +1099,12 @@ footer .logo img {
 
     .active .cards {
         flex-direction: column;
-        height: auto;
-        padding: 20px;
+        align-items: center;
+    }
+
+    .active .cards .card {
+        width: 100%;
+        max-width: 500px;
     }
 
     .position {
@@ -1131,123 +1158,6 @@ footer .logo img {
 }
 
 @media (max-width: 576px) {
-    header {
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "log-tit log-img";
-        position: relative;
-        padding: 10px 15px;
-        align-items: center;
-    }
-
-    header .log-tit {
-        grid-area: log-tit;
-        font-size: 24px;
-        margin: 5px 0;
-        text-align: right;
-    }
-
-    header .links {
-        grid-area: log-img;
-        position: relative;
-        width: 40px;
-        height: 40px;
-        margin: 0;
-        margin-right: 15px;
-        justify-self: end;
-    }
-
-    header .links .icon {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    header .links .icon .log-img {
-        width: 35px;
-        height: 35px;
-        margin: 0;
-    }
-
-    header .links .ul-2 {
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        width: 250px;
-        background: var(--whiteColor);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-
-    .main-section .right .links {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .main-section .right .links a {
-        width: 150px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    .mall-section .left {
-        margin: 10px;
-    }
-
-    footer .Social-media .input {
-        flex-direction: column;
-    }
-
-    footer .Social-media .input input {
-        width: 100%;
-    }
-
-    footer .Social-media .input button {
-        width: 100%;
-        position: static;
-        margin-top: 10px;
-    }
-
-    .main-section .right h2 {
-        font-size: 24px;
-    }
-
-    .main-section .right .desc {
-        font-size: 16px;
-        margin: 15px;
-    }
-
-    .mall-section .left h2 {
-        font-size: 20px;
-    }
-
-    .mall-section .left .desc {
-        font-size: 16px;
-    }
-
-    .templates .words h2 {
-        font-size: 24px;
-        width: auto;
-        max-width: 280px;
-    }
-
-    .active .cards .card {
-        width: 100%;
-        height: auto;
-    }
-
-    .carousel-track {
-        flex-direction: column;
-    }
-
-    .product-card {
-        width: 100%;
-        margin: 10px 0;
-    }
-
     header {
         grid-template-columns: auto auto;
         grid-template-areas: "log-tit log-img";

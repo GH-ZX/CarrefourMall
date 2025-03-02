@@ -284,34 +284,6 @@
     </div>
 </section>
 
-<script>
-    const track = document.querySelector('.carousel-track');
-    const prevButton = document.querySelector('.prev-btn');
-    const nextButton = document.querySelector('.next-btn');
-    let position = 0;
-    const cardWidth = 296; // 280px + 16px gap
-    const visibleCards = 4;
-    const totalCards = 6;
-
-    nextButton.addEventListener('click', () => {
-        position -= cardWidth;
-        const limit = -cardWidth * (totalCards - visibleCards);
-        
-        if (position < limit) {
-            position = 0;
-        }
-        track.style.transform = `translateX(${position}px)`;
-    });
-
-    prevButton.addEventListener('click', () => {
-        position += cardWidth;
-        if (position > 0) {
-            position = -cardWidth * (totalCards - visibleCards);
-        }
-        track.style.transform = `translateX(${position}px)`;
-    });
-</script>
-    <!-- End Offers Section -->
 
     <!-- Start Footer -->
     <footer>
@@ -343,7 +315,7 @@
 
 
 
-     <!-- JavaScript ربط ملف -->
-    <!-- <script src="script.js"></script> -->
+  
+    <script src="script.js"></script>
 </body>
 </html>
