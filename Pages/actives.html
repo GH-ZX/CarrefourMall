@@ -147,6 +147,39 @@
             cursor: default;
         }
 
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .activity-card {
+                flex-direction: column;
+            }
+
+            .activity-image-container {
+                flex: 0 0 250px;
+            }
+
+            .activity-content {
+                padding: 1rem;
+            }
+
+            .activity-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .activity-image-container {
+                flex: 0 0 150px;
+            }
+
+            .activity-title {
+                font-size: 1.2rem;
+            }
+
+            .activity-description {
+                font-size: 1rem;
+            }
+        }
+
   </style>
 </head>
 <body>
