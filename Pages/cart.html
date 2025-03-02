@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="../images/mall-logo.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>عربة التسوق - كارفور مول</title>
+    <style>
+        .cart-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cart-title {
+            color: var(--blueColor);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cart-items {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            gap: 1rem;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-price {
+            color: var(--blueColor);
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-btn {
+            background: var(--yellowColor);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-section {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            color: var(--blueColor);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-method {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--yellowColor);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            background: var(--yellowColor);
+            color: var(--blueColor);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--blueColor);
+            color: var(--yellowColor);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background: var(--yellowColor);
+            color: var(--blueColor);
+        }
+
+        @media (max-width: 768px) {
+            .cart-container {
+                padding: 1rem;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .payment-methods {
+                flex-direction: column;
+            }
+        }
+
+        .delivery-address {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .delivery-address h3 {
+            color: var(--blueColor);
+            margin-bottom: 1rem;
+        }
+
+        .delivery-address textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--yellowColor);
+            border-radius: 8px;
+            resize: vertical;
+            font-family: 'Almarai', sans-serif;
+            font-size: 1rem;
+        }
+
+        .delivery-address textarea:focus {
+            outline: none;
+            border-color: var(--blueColor);
+        }
+
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-amount {
+            color: var(--blueColor);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .delivery-address textarea {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- نسخ الهيدر من الصفحة الرئيسية -->
+    <header>
+        <!-- Header Title -->
+        <h1><a class="log-tit" href="#" title="Carrefour Mall">carrefour</a></h1>
+        <!-- Header Links -->
+        <ul class="ul-1">
+          <li><a  class="btn" href="tel:+84762240897" title="أتصل الآن">اتصل بنا</a></li>
+          <li><a  class="btn" href="#shopping" title="تسوق الآن">تسوق الآن</a></li>
+          <li><a  class="btn" href="#actives" title="شاهد فعاليات هذا الأسبوع">فعاليات</a></li>
+          <li><a  class="btn" href="#Offers" title="شاهد عروض هذا الأسبوع">عروض</a></li>
+          <li><a class="btn" href="Pages/cart.html" title="عربة التسوق"><i class="fas fa-shopping-cart"></i> السلة</a></li>
+        </ul>
+        <!-- Header Unit -->
+        <div class="links">
+          <span class="icon">
+            <img class="log-img" src="images/mall-logo.png" alt="شعار كارفور">
+          </span>
+          <ul class="ul-2">
+            <li><a href="menuPages/fruits/fruits.html">خضار وفواكه</a></li>
+            <li><a href="menuPages/drinks/drinks.html">مشروبات</a></li>
+            <li><a href="menuPages/games/games.html">ألعاب</a></li>
+            <li><a href="menuPages/supermarket/supermarket.html">سوبر ماركت</a></li>
+            <li><a href="menuPages/meals/meals.html">وجبات جاهزة</a></li>
+            <li><a href="menuPages/devices/devices.html">أجهزة ألكترونية</a></li>
+            <li><a href="menuPages/stationery/stationery.html">قرطاسية</a></li>
+            <li><a href="menuPages/clothes/clothes.html">ألبسة</a></li>
+          </ul>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h1 class="cart-title">عربة التسوق</h1>
+        
+        <div class="cart-items">
+            <!-- مثال لمنتج في السلة -->
+            <div class="cart-item">
+                <img src="../images/devices.jpg" alt="لابتوب">
+                <div class="item-details">
+                    <h3>لابتوب HP جديد</h3>
+                    <p>معالج i7، رام 16GB</p>
+                    <p class="item-price" data-price="500">500$</p>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+            </div>
+            <!-- يمكن إضافة المزيد من المنتجات هنا -->
+        </div>
+
+        <div class="checkout-section">
+            <div class="delivery-address">
+                <h3>عنوان التوصيل</h3>
+                <textarea 
+                    placeholder="يرجى كتابة العنوان بالتفصيل (المدينة، المنطقة، الشارع، رقم المبنى)" 
+                    rows="3"></textarea>
+            </div>
+
+            <div class="total-price">
+                <span>السعر الإجمالي:</span>
+                <span class="price-amount">500$</span>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>الدفع عند الاستلام</p>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-credit-card"></i>
+                    <p>الدفع الإلكتروني</p>
+                </div>
+            </div>
+
+            <button class="checkout-btn">إتمام الشراء</button>
+        </div>
+    </div>
+
+    <!-- نسخ الفوتر من الصفحة الرئيسية -->
+    <footer>
+        <!-- ...existing footer code... -->
+    </footer>
+
+    <script>
+        // حساب السعر الإجمالي
+        function updateTotalPrice() {
+            const items = document.querySelectorAll('.cart-item');
+            let total = 0;
+
+            items.forEach(item => {
+                const price = parseFloat(item.querySelector('.item-price').dataset.price);
+                const quantity = parseInt(item.querySelector('.quantity').textContent);
+                total += price * quantity;
+            });
+
+            document.querySelector('.price-amount').textContent = total + '$';
+        }
+
+        // التحكم في الكمية
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const container = button.parentElement;
+                const quantitySpan = container.querySelector('.quantity');
+                let quantity = parseInt(quantitySpan.textContent);
+                
+                if (button.classList.contains('plus')) {
+                    quantity++;
+                } else if (quantity > 1) {
+                    quantity--;
+                }
+                
+                quantitySpan.textContent = quantity;
+                updateTotalPrice();
+            });
+        });
+
+        // التحقق من العنوان قبل إتمام الشراء
+        document.querySelector('.checkout-btn').addEventListener('click', () => {
+            const address = document.querySelector('.delivery-address textarea').value.trim();
+            if (!address) {
+                alert('يرجى كتابة عنوان التوصيل');
+                return;
+            }
+            
+            // التحقق من اختيار طريقة الدفع
+            const selectedPayment = document.querySelector('.payment-method[style*="background: rgb(255, 224, 0)"]');
+            if (!selectedPayment) {
+                alert('يرجى اختيار طريقة الدفع');
+                return;
+            }
+
+            alert('تم إتمام عملية الشراء بنجاح!\nسيتم التوصيل إلى العنوان: ' + address);
+        });
+
+        // اختيار طريقة الدفع
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', () => {
+                document.querySelectorAll('.payment-method').forEach(m => 
+                    m.style.background = 'white');
+                method.style.background = '#FFE000';
+            });
+        });
+    </script>
+</body>
+</html>
