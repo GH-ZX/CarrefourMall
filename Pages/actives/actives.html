@@ -54,7 +54,6 @@
                 </div>
                 <p class="activity-description">تخفيضات حصرية تصل إلى 70% على جميع المنتجات في كارفور مول. فرصة ذهبية للتسوق بأسعار مميزة! تشمل التخفيضات جميع الأقسام من الملابس والإلكترونيات إلى المواد الغذائية.</p>
                 <div class="coupon-section">
-                    <p>استخدم كود الخصم لتحصل على تخفيضات تصل إلى 70%:</p>
                     <button class="booking-btn">احجز الآن</button>
                 </div>
             </div>
@@ -95,9 +94,9 @@
     <footer>
        <div class="Social-media">
         <div class="icons">
-        <a href=""><img src="../../images/facebook.png"  title="go to the channel"  alt="facebook" loading="lazy"></a>
+        <a href=""><img src="../../images/facebook.png"  title="go to the channel"  alt="facebook"  loading="lazy"></a>
         <a href=""><img src="../../images/instagram.png" title="go to the channel"  alt="instagram" loading="lazy"></a>
-        <a href=""><img src="../../images/twitter.png"   title="go to the channel"  alt="X" loading="lazy"></a>
+        <a href=""><img src="../../images/twitter.png"   title="go to the channel"  alt="X"         loading="lazy"></a>
       </div>
         <div class="input">
           <input type="text" placeholder="تواصل معنا">
@@ -124,47 +123,7 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-  <script>
-    // Image preview functionality
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-
-    document.querySelectorAll('.activity-image-container').forEach(container => {
-        const img = container.querySelector('.activity-image');
-        
-        container.addEventListener('click', () => {
-            modal.style.display = "block";
-            modalImg.src = img.src;
-        });
-    });
-
-    // Close modal when clicking outside
-    modal.addEventListener('click', () => {
-        modal.style.display = "none";
-    });
-
-    // Prevent modal from closing when clicking on the image
-    modalImg.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            modal.style.display = "none";
-        }
-    });
-
-    // Booking buttons functionality
-    document.querySelectorAll('.booking-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            if (!this.classList.contains('booked')) {
-                this.textContent = '✓ تم الحجز';
-                this.classList.add('booked');
-            }
-        });
-    });
-</script>
+  <script src="actives.js"></script>
 
 </body>
 </html>

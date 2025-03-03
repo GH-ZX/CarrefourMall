@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ["حذاء رسمي", { img: "../../sales/formal_shoes.jpg", price: "50000 ل.س" }]
 ]);
    
-
 const productsContainer = document.getElementById("products");
 
 // إنشاء زر السلة

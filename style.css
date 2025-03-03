@@ -416,7 +416,7 @@ header .links .ul-2 a:hover {
 }
 
 .templates .words .desc {
-    font-size: 18px;
+    font-size: 20px;
     margin: 10px;
     color: var(--greenColor);
 }
@@ -455,7 +455,7 @@ header .links .ul-2 a:hover {
 .templates .main .temp a {
     color: var(--whiteColor);
     font-size: 28px;
-    text-shadow: 1px 1px 5px black;
+    text-shadow: 2px 2px 6px black;
     font-weight: bold;
     letter-spacing: 1px;
     height: 100%;
@@ -501,94 +501,6 @@ header .links .ul-2 a:hover {
 }
 
 /* ============================
-   6. Position Section
-   ============================ */
-.position {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-areas: left left left left left right right right right right;
-    background-color: rgb(250, 204, 0);
-    border-radius: 1000px 100000px;
-    margin: 10px 100px;
-}
-
-.position .left {
-    grid-area: left;
-    grid-column: 1 / 6;
-    height: 65vh;
-    margin-left: 60px;
-    background-image: url(images/mabs.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.position .right {
-    grid-area: left;
-    grid-column: 6 / 11  ;
-    height: 65vh;
-    margin-right: 60px;
-    background-color: var(--grayColor);
-}
-
-.position .right h2 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--yellowColor);
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.position .right .form {
-    width: 100%;
-    height: 40vh;
-    align-content: center;
-}
-
-.position .right form {
-    display: flex;
-    flex-direction: column;
-} 
-
-.position .right .form form input {
-    border: none;
-    outline: none;
-    width: 470px;
-    height: 50px;
-    margin: 15px auto;
-    border-radius: 10px;
-    padding: 15px;
-    color: var(--blueColor);
-    cursor: pointer;
-}
-
-.position .right .form form input:focus {
-    border: 2px solid var(--yellowColor);
-}
-
-.position .right .form form button {
-    border: none;
-    width: 70px;
-    height: 40px;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 10px;
-    color: var(--yellowColor);
-    background-color: var(--blueColor);
-    margin: 30px auto;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.position .right .form form button:hover {
-    color: var(--blueColor);
-    background-color: var(--yellowColor);
-}
-
-/* ============================
    7. Activities Section
    ============================ */
 .active {
@@ -607,16 +519,11 @@ header .links .ul-2 a:hover {
     font-size: 35px;
     font-weight: bold;
     color: var(--blueColor);
-    background-color: var(--greenColor);
-    width: 300px;
-    margin: 0 auto 15px;
     padding: 10px;
-    border-radius: 300px 1000px;
 }
 
 .active .words .desc {
     font-size: 20px;
-    font-weight: bold;
     color: var(--greenColor);
 }
 
@@ -626,8 +533,11 @@ header .links .ul-2 a:hover {
     justify-content: center;
     gap: 30px;
     padding: 20px 40px;
-    background-color: var(--blue-gry-Color);
+    background-color: #f8f8f8;;
     border-radius: var(--radius-lg);
+    margin-left: 60px;
+    margin-right: 60px;
+    direction: rtl;
 }
 
 /* Individual Card */
@@ -732,7 +642,7 @@ header .links .ul-2 a:hover {
 }
 
 .offers-title p {
-    color: #666;
+    color: var(--greenColor);
     font-size: 18px;
 }
 
@@ -824,12 +734,12 @@ header .links .ul-2 a:hover {
 }
 
 .original-price {
-    color: #999;
+    color: var(--blueColor);
     text-decoration: line-through;
 }
 
 .discounted-price {
-    color: #e31837;
+    color: var(--greenColor);
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -890,6 +800,94 @@ header .links .ul-2 a:hover {
 
 .carousel-button:hover {
     background: rgba(0,0,0,0.7);
+}
+
+/* ============================
+   6. Position Section
+   ============================ */
+   .position {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-areas: left left left left left right right right right right;
+    background-color: rgb(250, 204, 0);
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.position .left {
+    grid-area: left;
+    grid-column: 1 / 6;
+    height: 60vh;
+    margin-left: 60px;
+    background-image: url(images/mabs.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.position .right {
+    grid-area: left;
+    grid-column: 6 / 11  ;
+    height: 60vh;
+    margin-right: 60px;
+    background-color: var(--grayColor);
+}
+
+.position .right h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--yellowColor);
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.position .right .form {
+    width: 100%;
+    height: 40vh;
+    align-content: center;
+}
+
+.position .right form {
+    display: flex;
+    flex-direction: column;
+} 
+
+.position .right .form form input {
+    border: none;
+    outline: none;
+    width: 470px;
+    height: 50px;
+    margin: 15px auto;
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--blueColor);
+    cursor: pointer;
+}
+
+.position .right .form form input:focus {
+    border: 2px solid var(--yellowColor);
+}
+
+.position .right .form form button {
+    border: none;
+    width: 70px;
+    height: 40px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--yellowColor);
+    background-color: var(--blueColor);
+    margin: 30px auto;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.position .right .form form button:hover {
+    color: var(--blueColor);
+    background-color: var(--yellowColor);
 }
 
 /* ============================
@@ -1252,5 +1250,3 @@ footer .logo img {
     top: 25%;
     align-items: center;
 }
-
-
