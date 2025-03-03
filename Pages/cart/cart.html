@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="../../images/mall-logo.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../cart/cart.css">
+    <title>عربة التسوق</title>
+</head>
+<body>
+    <!-- نسخ الهيدر من الصفحة الرئيسية -->
+    <header>
+        <!-- Header Title -->
+        <h1><a class="log-tit" href="../../index.html" title="Carrefour Mall">carrefour</a></h1>
+        <!-- Header Links -->
+        <ul class="ul-1">
+          <li><a class="btn" href="tel:+84762240897"          title="أتصل الآن">اتصل بنا</a></li>
+          <li><a class="btn" href="../../index.html#shopping" title="تسوق الآن">تسوق الآن</a></li>
+          <li><a class="btn" href="../../index.html#actives"  title="شاهد فعاليات هذا الأسبوع">فعاليات</a></li>
+          <li><a class="btn" href="../../index.html#Offers"   title="شاهد عروض هذا الأسبوع">عروض</a></li>
+          <li><a class="btn" href="cart.html"                 title="عربة التسوق" style="background-color: rgb(255, 255, 255);" ><i class="fas fa-shopping-cart"></i> السلة</a></li>
+        </ul>
+        <!-- Header Unit -->
+        <div class="links">
+          <span class="icon">
+            <img class="log-img" src="../../images/mall-logo.png" alt="شعار كارفور">
+          </span>
+          <ul class="ul-2">
+            <li><a href="../../menuPages/fruits/fruits.html">خضار وفواكه</a></li>
+            <li><a href="../../menuPages/drinks/drinks.html">مشروبات</a></li>
+            <li><a href="../../menuPages/games/games.html">ألعاب</a></li>
+            <li><a href="../../menuPages/supermarket/supermarket.html">سوبر ماركت</a></li>
+            <li><a href="../../menuPages/meals/meals.html">وجبات جاهزة</a></li>
+            <li><a href="../../menuPages/devices/devices.html">أجهزة ألكترونية</a></li>
+            <li><a href="../../menuPages/stationery/stationery.html">قرطاسية</a></li>
+            <li><a href="../../menuPages/clothes/clothes.html">ألبسة</a></li>
+          </ul>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h1 class="cart-title">عربة التسوق</h1>
+        
+        <div class="cart-items">
+            <!-- مثال لمنتج في السلة -->
+            <div class="cart-item">
+                <img src="../../images/devices.jpg" alt="لابتوب">
+                <div class="item-details">
+                    <h3>لابتوب HP جديد</h3>
+                    <p>معالج i7، رام 16GB</p>
+                    <p class="item-price" data-price="500">500$</p>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+            </div>
+            <!-- يمكن إضافة المزيد من المنتجات هنا -->
+        </div>
+
+        <div class="checkout-section">
+            <div class="delivery-address">
+                <h3>عنوان التوصيل</h3>
+                <textarea 
+                    placeholder="يرجى كتابة العنوان بالتفصيل (المدينة، المنطقة، الشارع، رقم المبنى)" 
+                    rows="3"></textarea>
+            </div>
+
+            <div class="total-price">
+                <span>السعر الإجمالي:</span>
+                <span class="price-amount">500$</span>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>الدفع عند الاستلام</p>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-credit-card"></i>
+                    <p>الدفع الإلكتروني</p>
+                </div>
+            </div>
+
+            <button class="checkout-btn">إتمام الشراء</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="Social-media">
+            <div class="icons">
+            <a href=""><img src="../../images/facebook.png"  title="go to the channel"  alt="facebook"></a>
+            <a href=""><img src="../../images/instagram.png" title="go to the channel"  alt="instagram"></a>
+            <a href=""><img src="../../images/twitter.png"   title="go to the channel"  alt="X"></a>
+          </div>
+            <div class="input">
+              <input type="text" placeholder="تواصل معنا">
+              <button>إرسال</button>
+            </div>
+           </div>
+    
+           <div class="links">
+            <a class="btn" href="tel:+8476224089"title="أتصل الآن">اتصل بنا</a>
+            <a class="btn" href="../../index.html#shopping"title="تسوق الآن">تسوق الآن</a>
+            <a class="btn" href="../../index.html#actives"title="شاهد فعاليات هذا الأسبوع">فعاليات</a>
+            <a class="btn" href="../../index.html#Offers"title="شاهد عروض هذا الأسبوع">عروض</a>
+            <a class="btn" href="../../Pages/cart/cart.html" title="عربة التسوق"><i class="fas fa-shopping-cart"></i> السلة</a>
+        </div>
+    
+           <div class="logo">
+            <a href="../../index.html" title="العودة إلى الصفحة الرئيسية"><img src="../../images/mall-logo.png" alt="شعار المول"></a>
+           </div>
+    </footer>
+
+<script href="../script.js"></script>
+</body>
+</html>

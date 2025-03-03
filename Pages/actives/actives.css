@@ -1,0 +1,231 @@
+.events-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activity-card {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.activity-image-container {
+    flex: 0 0 400px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.activity-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.activity-image-container:hover .activity-image {
+    transform: scale(1.1);
+}
+
+.activity-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activity-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.activity-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.activity-date {
+    color: #FFE000;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.activity-location {
+    color: #444;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.coupon-section {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.coupon-code {
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #FFE000;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border: 2px dashed #FFE000;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    margin-top: 2%;
+}
+
+.booking-btn {
+    background-color: #887f40;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: 150px;
+}
+
+.booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.booking-btn.booked {
+    background-color: #FFE000;
+    cursor: default;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+    .activity-card {
+        flex-direction: column;
+    }
+
+    .activity-image-container {
+        flex: 0 0 300px;
+    }
+
+    .activity-content {
+        padding: 1.5rem;
+    }
+
+    .activity-title {
+        font-size: 1.6rem;
+    }
+}
+@media (max-width: 768px) {
+    .activity-card {
+        flex-direction: column;
+        width: 95%; /* Make the card take up almost the whole screen */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .activity-image-container {
+        flex: 0 0 300px; /* Increased for better visibility */
+        width: 100%;
+    }
+
+    .activity-content {
+        padding: 1.5rem;
+    }
+
+    .activity-title {
+        font-size: 2rem; /* Increased font size */
+    }
+
+    .activity-description {
+        font-size: 1.2rem; /* Increased font size */
+    }
+
+    .booking-btn {
+        font-size: 1.3rem; /* Increased font size */
+        width: 200px; /* Increased button width */
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-card {
+        margin-bottom: 2rem;
+    }
+    
+    .activity-image-container {
+        flex: 0 0 150px;
+    }
+
+    .activity-title {
+        font-size: 1.2rem;
+    }
+
+    .activity-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .activity-image-container {
+        flex: 0 0 200px; /* Further adjustments for smaller screens */
+    }
+
+    .activity-title {
+        font-size: 1.7rem; /* Further adjustments for smaller screens */
+    }
+
+    .activity-description {
+        font-size: 1.1rem; /* Further adjustments for smaller screens */
+    }
+
+    .coupon-code {
+        font-size: 1.2rem; /* Increased coupon code size */
+    }
+
+    .booking-btn {
+        font-size: 1.2rem; /* Increased booking button size */
+        width: 100%; /* Make button full width */
+    }
+}
