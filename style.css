@@ -1,6 +1,10 @@
 /* ============================
    1. Imports & Basic Setup
    ============================ */
+
+   /*dfdff*/
+/*dfdff*/
+
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
 /* Reset & Base Styles */
@@ -815,7 +819,6 @@ header .links .ul-2 a:hover {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     padding: 20px;
-    direction: rtl;
     border-width: 5px;
     border-color: var(--blueColor) var(--blueColor) rgb(0, 236, 79) rgb(0, 236, 79);
     border-style: solid;
@@ -832,8 +835,8 @@ header .links .ul-2 a:hover {
     background-size: cover;
     background-position: center;
     border-radius: var(--radius-md);
-    border: 3px solid var(--yellowColor);
     background-repeat: no-repeat;
+    box-shadow: 0px 2px 5px rgb(62, 62, 62);
 }
 
 .ramadan .right {
@@ -847,6 +850,7 @@ header .links .ul-2 a:hover {
     height: 60vh;
     margin-right: 60px;
     background-color: rgb(0, 236, 79);
+    box-shadow: 0px 3px 4px rgb(62, 62, 62);
 }
 
 .ramadan .right h2 {
@@ -903,7 +907,6 @@ header .links .ul-2 a:hover {
     border-radius: 10px;
     color: var(--whiteColor);
     background-color: var(--blueColor);
-    color: var(--yellowColor);
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -914,8 +917,7 @@ header .links .ul-2 a:hover {
 }
 
 .ramadan .right .form form button:hover {
-    background-color: var(--yellowColor);
-    color: var(--blueColor);
+    color: var(--yellowColor);
     transform: translateY(-3px);
 }
 
@@ -972,9 +974,11 @@ header .links .ul-2 a:hover {
         width: 100px;
         padding: 10px;
     }
-    color: var(--yellowColor);
-    transform: translateY(-3px);
 
+.ramadan .right .form form button {
+        width: 100px;
+        padding: 10px;
+    }
 }
 
 /* ============================
