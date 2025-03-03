@@ -803,30 +803,33 @@ header .links .ul-2 a:hover {
 }
 
 /* ============================
-   6. Position Section
+   6. Ramadan Section
    ============================ */
-   .position {
+   .ramadan {
     height: 80vh;
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-template-areas: left left left left left right right right right right;
-    background-color: rgb(250, 204, 0);
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 30px 60px 50px ;
+    box-shadow: var(--shadow-lg);
+    background-color: #f8f8f8;
+    border-radius: var(--radius-lg);
+
 }
 
-.position .left {
+.ramadan .left {
     grid-area: left;
     grid-column: 1 / 6;
     height: 60vh;
     margin-left: 60px;
-    background-image: url(images/mabs.jpg);
+    background-image: url(images/ramadan.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border: 3px solid var(--yellowColor);
 }
 
-.position .right {
+.ramadan .right {
     grid-area: left;
     grid-column: 6 / 11  ;
     height: 60vh;
@@ -834,7 +837,7 @@ header .links .ul-2 a:hover {
     background-color: var(--grayColor);
 }
 
-.position .right h2 {
+.ramadan .right h2 {
     text-align: center;
     font-size: 28px;
     font-weight: bold;
@@ -844,18 +847,18 @@ header .links .ul-2 a:hover {
     justify-content: center;
 }
 
-.position .right .form {
+.ramadan .right .form {
     width: 100%;
     height: 40vh;
     align-content: center;
 }
 
-.position .right form {
+.ramadan .right form {
     display: flex;
     flex-direction: column;
 } 
 
-.position .right .form form input {
+.ramadan .right .form form input {
     border: none;
     outline: none;
     width: 470px;
@@ -867,11 +870,11 @@ header .links .ul-2 a:hover {
     cursor: pointer;
 }
 
-.position .right .form form input:focus {
+.ramadan .right .form form input:focus {
     border: 2px solid var(--yellowColor);
 }
 
-.position .right .form form button {
+.ramadan .right .form form button {
     border: none;
     width: 70px;
     height: 40px;
@@ -885,7 +888,7 @@ header .links .ul-2 a:hover {
     transition: 0.2s ease;
 }
 
-.position .right .form form button:hover {
+.ramadan .right .form form button:hover {
     color: var(--blueColor);
     background-color: var(--yellowColor);
 }
