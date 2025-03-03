@@ -4,9 +4,17 @@
     const prevButton = document.querySelector('.prev-btn');
     const nextButton = document.querySelector('.next-btn');
     let position = 0;
-    const cardWidth = 296; // 280px + 16px gap
-    const visibleCards = 4;
+    const cardWidth = 300;
+    let visibleCards = window.innerWidth <= 768 ? 1 : 4;
     const totalCards = 6;
+
+// Add resize listener to update visibleCards when screen size changes
+window.addEventListener('resize', () => {
+    visibleCards = window.innerWidth <= 768 ? 1 : 4;
+    position = 0;
+    track.style.transform = `translateX(${position}px)`;
+});
+
 
     nextButton.addEventListener('click', () => {
         position -= cardWidth;
@@ -26,6 +34,7 @@
         track.style.transform = `translateX(${position}px)`;
     });
 
+    
     // تسريع حركة الكاروسل التلقائية
     let autoScrollInterval = setInterval(() => {
         position -= cardWidth;
