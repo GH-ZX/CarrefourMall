@@ -34,7 +34,7 @@ window.addEventListener('resize', () => {
         track.style.transform = `translateX(${position}px)`;
     });
 
-    
+
     // تسريع حركة الكاروسل التلقائية
     let autoScrollInterval = setInterval(() => {
         position -= cardWidth;
@@ -86,12 +86,14 @@ window.addEventListener('resize', () => {
     });
 
     // التحقق من العنوان قبل إتمام الشراء
-    document.querySelector('.checkout-btn').addEventListener('click', () => {
-        const address = document.querySelector('.delivery-address textarea').value.trim();
-        if (!address) {
-            alert('يرجى كتابة عنوان التوصيل');
-            return;
-        }
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+            const address = document.querySelector('.delivery-address textarea').value.trim();
+            if (!address) {
+                alert('يرجى كتابة عنوان التوصيل');
+                return;
+            }
         
         // التحقق من اختيار طريقة الدفع
         const selectedPayment = document.querySelector('.payment-method[style*="background: rgb(255, 224, 0)"]');
@@ -111,3 +113,4 @@ window.addEventListener('resize', () => {
             method.style.background = '#FFE000';
         });
     });
+}
