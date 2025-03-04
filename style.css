@@ -805,21 +805,25 @@ header .links .ul-2 a:hover {
 /* ============================
    6. Ramadan Section
    ============================ */
-   .ramadan {
-    height: 80vh;
+.ramadan {
+    min-height: 80vh;
     display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-areas: left left left left left right right right right right;
-    margin: 30px 60px 50px ;
-    box-shadow: var(--shadow-lg);
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px;
     background-color: #f8f8f8;
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+    direction: rtl;
     border-width: 5px;
     border-color: var(--blueColor) var(--blueColor) rgb(0, 236, 79) rgb(0, 236, 79);
     border-style: solid;
 }
 
 .ramadan .left {
+    height: 400px;
+    background-image: url(images/ramadan.jpg);
     grid-area: left;
     grid-column: 1 / 6;
     height: 60vh;
@@ -827,10 +831,17 @@ header .links .ul-2 a:hover {
     background-image: url(images/rama.png);
     background-size: cover;
     background-position: center;
+    border-radius: var(--radius-md);
+    border: 3px solid var(--yellowColor);
     background-repeat: no-repeat;
 }
 
 .ramadan .right {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--grayColor);
+    border-radius: var(--radius-md);
     grid-area: left;
     grid-column: 6 / 11  ;
     height: 60vh;
@@ -839,6 +850,10 @@ header .links .ul-2 a:hover {
 }
 
 .ramadan .right h2 {
+    color: var(--yellowColor);
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
@@ -848,18 +863,19 @@ header .links .ul-2 a:hover {
     justify-content: center;
 }
 
-.ramadan .right .form {
-    width: 100%;
-    height: 40vh;
-    align-content: center;
-}
-
-.ramadan .right form {
+.ramadan .right .form form {
     display: flex;
     flex-direction: column;
-} 
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
 .ramadan .right .form form input {
+    width: 100%;
+    padding: 15px;
+    border-radius: var(--radius-md);
     border: none;
     outline: none;
     width: 470px;
@@ -876,15 +892,21 @@ header .links .ul-2 a:hover {
 }
 
 .ramadan .right .form form button {
+    width: 120px;
+    padding: 12px;
+    margin: 0 auto;
     border: none;
+    border-radius: var(--radius-md);
     width: 200px;
     height: 50px;
     font-weight: bold;
     border-radius: 10px;
     color: var(--whiteColor);
     background-color: var(--blueColor);
-    margin: 30px auto;
+    color: var(--yellowColor);
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
     transition: 0.4s ease;
     font-size: 18px;
     text-align: center;
@@ -892,6 +914,64 @@ header .links .ul-2 a:hover {
 }
 
 .ramadan .right .form form button:hover {
+    background-color: var(--yellowColor);
+    color: var(--blueColor);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+    .ramadan {
+        margin: 20px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ramadan {
+        grid-template-columns: 1fr;
+        margin: 15px;
+    }
+
+    .ramadan .left {
+        height: 300px;
+    }
+
+    .ramadan .right {
+        padding: 15px;
+    }
+
+    .ramadan .right h2 {
+        font-size: 24px;
+    }
+
+    .ramadan .right .form form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .ramadan {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .ramadan .left {
+        height: 200px;
+    }
+
+    .ramadan .right h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .ramadan .right .form form input {
+        padding: 12px;
+    }
+
+    .ramadan .right .form form button {
+        width: 100px;
+        padding: 10px;
+    }
     color: var(--yellowColor);
     transform: translateY(-3px);
 
@@ -1178,6 +1258,8 @@ footer .logo img {
     .active .words h2 {
         width: 250px;
         font-size: 28px;
+        display: flex;
+        justify-content: end;
     }
     header {
         grid-template-columns: auto auto;
@@ -1201,6 +1283,8 @@ footer .logo img {
         grid-area: log-img;
         margin: 0;
         width: auto;
+        display: flex;
+        justify-content: end;
     }
 
     header .links .ul-2 {
