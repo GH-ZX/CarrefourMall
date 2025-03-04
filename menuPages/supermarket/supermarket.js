@@ -23,6 +23,9 @@ const productsContainer = document.getElementById("products");
 const cartButton = document.createElement("button");
 cartButton.classList.add("cart-button");
 cartButton.innerHTML = "🛒 <span class='cart-badge'>0</span>";
+cartButton.addEventListener("click", () => {
+    window.location.href = "../../Pages/cart/cart.html";
+});
 document.body.appendChild(cartButton);
 
 // العثور على العنصر المسؤول عن العداد

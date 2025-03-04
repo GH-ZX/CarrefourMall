@@ -641,9 +641,7 @@ header .links .ul-2 a:hover {
    8. Offers Section
    ============================ */
 .Offers {
-    height: auto;
-    min-height: 100vh;
-    background-color: #f3f0ff;
+    height: 80vh;
     padding: 2rem 0;
 }
 
@@ -671,16 +669,14 @@ header .links .ul-2 a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    background: #8a7fb9;
+
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-/* Add Carousel Section Styles */
 .carousel-section {
     padding: 2rem;
     position: relative;
-    background: #f8f8f8;
     margin-bottom: 2rem;
 }
 
@@ -736,12 +732,14 @@ header .links .ul-2 a:hover {
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 0.5rem;
+    direction: rtl;
 }
 
 .product-description {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    direction: rtl;
 }
 
 .product-price {
@@ -896,11 +894,11 @@ header .links .ul-2 a:hover {
    6. Ramadan Section
    ============================ */
 .ramadan {
-    min-height: 80vh;
+    height: 80vh;
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-template-areas: left left left left left right right right right right;
-    margin: 40px;
+    margin-bottom: 90px;
     background-color: #f8f8f8;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
