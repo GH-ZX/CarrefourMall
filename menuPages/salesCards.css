@@ -1,5 +1,42 @@
+/* إعادة تعيين الأساسيات */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* إصلاح الهيدر */
+header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header .ul-1 {
+    justify-content: center;
+    margin: auto;
+}
+
+header .ul-1 li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+}
+
 /* صورة القسم */
 .section-banner {
+    width: 100%;
     height: 250px;
     display: flex;
     align-items: center;
@@ -8,14 +45,22 @@
     font-size: 35px;
     font-weight: bold;
     text-shadow: 2px 2px 5px black;
+    margin-top: 0;
 }
 
 /* المنتجات */
 .products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
     padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    direction: rtl;
+    justify-content: center;
+    justify-items: center;
 }
 
 .product-card {
@@ -24,6 +69,8 @@
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .product-card:hover {
@@ -111,8 +158,8 @@
 
 .cart-button {
     position: fixed;
+    left: 20px; /* تغيير من right إلى left */
     bottom: 20px;
-    right: 20px;
     width: 60px;
     height: 60px;
     background-color: var(--yellowColor);
@@ -126,6 +173,7 @@
     font-size: 24px;
     color: var(--blueColor);
     transition: 0.3s;
+    z-index: 1000;
 }
 
 .cart-button:hover {
@@ -147,4 +195,168 @@
     align-items: center;
     font-weight: bold;
     display: none; /* مخفي افتراضيًا */
+}
+
+/* التنسيقات المتجاوبة */
+@media (max-width: 1200px) {
+    .products-container {
+        padding: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .section-banner {
+        height: 200px;
+        font-size: 30px;
+    }
+
+    /* إخفاء روابط النافبار */
+    header .ul-1 {
+        display: none;
+    }
+
+    /* تعديل القائمة المنسدلة */
+    header .links .ul-2 {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-container {
+        padding: 10px;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-banner {
+        height: 150px;
+        font-size: 25px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 130px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+    .buy-btn {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .cart-button {
+        left: 15px;
+        bottom: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        max-width: 100%;
+        margin: 0 10px;
+        width: 85%;
+        gap: 15px;
+    }
+
+    .section-banner {
+        height: 200px;
+        font-size: 22px;
+    }
+
+    .product-card {
+        margin: 0 10px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .quantity-control button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .cart-button {
+        left: 10px;
+        bottom: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* تحسينات لتجربة المستخدم */
+@media (hover: none) {
+    .product-card:hover {
+        transform: none;
+    }
+
+    .buy-btn:active {
+        background-color: var(--yellowColor);
+        transform: scale(0.95);
+    }
+}
+
+/* تحسين أداء التحميل على الأجهزة المحمولة */
+@media (max-width: 768px) {
+    .product-card img {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .cart-button {
+        opacity: 0.9;
+    }
+}
+
+/* تصحيح مشكلة الفراغ */
+body {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* تعديل النافبار */
+header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header .ul-1 {
+    justify-content: center;
+    margin: auto;
+}
+
+header .ul-1 li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
 }
