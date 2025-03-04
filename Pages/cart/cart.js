@@ -48,8 +48,7 @@ if (checkoutBtn) {
     }
 
     alert('تم إتمام عملية الشراء بنجاح!\nسيتم التوصيل إلى العنوان: ' + address);
-    });
-}
+});
 
 // اختيار طريقة الدفع
 document.querySelectorAll('.payment-method').forEach(method => {
@@ -59,3 +58,4 @@ document.querySelectorAll('.payment-method').forEach(method => {
         method.style.background = '#FFE000';
     });
 });
+}
