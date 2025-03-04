@@ -812,21 +812,18 @@ header .links .ul-2 a:hover {
 .ramadan {
     min-height: 80vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-areas: left left left left left right right right right right;
     margin: 40px;
     background-color: #f8f8f8;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     padding: 20px;
-    border-width: 5px;
+    border: 5px solid;
     border-color: var(--blueColor) var(--blueColor) rgb(0, 236, 79) rgb(0, 236, 79);
-    border-style: solid;
 }
 
 .ramadan .left {
-    height: 400px;
-    background-image: url(images/ramadan.jpg);
     grid-area: left;
     grid-column: 1 / 6;
     height: 60vh;
@@ -835,36 +832,25 @@ header .links .ul-2 a:hover {
     background-size: cover;
     background-position: center;
     border-radius: var(--radius-md);
-    background-repeat: no-repeat;
     box-shadow: 0px 2px 5px rgb(62, 62, 62);
 }
 
 .ramadan .right {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: var(--grayColor);
-    border-radius: var(--radius-md);
-    grid-area: left;
-    grid-column: 6 / 11  ;
+    grid-area: right;
+    grid-column: 6 / 11;
     height: 60vh;
     margin-right: 60px;
     background-color: rgb(0, 236, 79);
+    border-radius: var(--radius-md);
     box-shadow: 0px 3px 4px rgb(62, 62, 62);
+    padding: 20px;
 }
 
 .ramadan .right h2 {
-    color: var(--yellowColor);
+    color: var(--blueColor);
     font-size: 28px;
     text-align: center;
     margin-bottom: 30px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--blueColor);
-    margin: 20px;
-    display: flex;
-    justify-content: center;
 }
 
 .ramadan .right .form form {
@@ -872,82 +858,61 @@ header .links .ul-2 a:hover {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    max-width: 500px;
+    max-width: 470px;
     margin: 0 auto;
 }
 
 .ramadan .right .form form input {
     width: 100%;
-    padding: 15px;
-    border-radius: var(--radius-md);
+    height: 50px;
+    border-radius: 10px;
     border: none;
     outline: none;
-    width: 470px;
-    height: 50px;
-    margin: 15px auto;
-    border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     color: black;
-    cursor: pointer;
-}
-
-.ramadan .right .form form input:focus {
-    border: 2px solid var(--blueColor);
 }
 
 .ramadan .right .form form button {
-    width: 120px;
-    padding: 12px;
-    margin: 0 auto;
-    border: none;
-    border-radius: var(--radius-md);
     width: 200px;
     height: 50px;
-    font-weight: bold;
+    margin: 15px auto;
     border-radius: 10px;
-    color: var(--whiteColor);
+    border: none;
     background-color: var(--blueColor);
+    color: var(--whiteColor);
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    transition: 0.4s ease;
-    font-size: 18px;
-    text-align: center;
-    align-items: center;
 }
 
-.ramadan .right .form form button:hover {
-    color: var(--yellowColor);
-    transform: translateY(-3px);
-}
-
+/* التنسيقات للشاشات المتوسطة والصغيرة */
 @media (max-width: 992px) {
     .ramadan {
+        display: flex;
+        flex-direction: column;
         margin: 20px;
         gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .ramadan {
-        grid-template-columns: 1fr;
-        margin: 15px;
-    }
-
-    .ramadan .left {
-        height: 300px;
-    }
-
-    .ramadan .right {
         padding: 15px;
     }
 
-    .ramadan .right h2 {
-        font-size: 24px;
+    .ramadan .left {
+        width: 100%;
+        height: 300px;
+        margin: 0;
+        order: 1; /* وضع الصورة في الأعلى */
+    }
+
+    .ramadan .right {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        margin: 0;
+        order: 2; /* وضع القسم في الأسفل */
     }
 
     .ramadan .right .form form {
-        max-width: 100%;
+        max-width: 90%;
     }
 }
 
@@ -961,22 +926,24 @@ header .links .ul-2 a:hover {
         height: 200px;
     }
 
+    .ramadan .right {
+        padding: 15px;
+    }
+
     .ramadan .right h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 22px;
+        margin-bottom: 15px;
     }
 
     .ramadan .right .form form input {
-        padding: 12px;
+        height: 45px;
+        margin-bottom: 10px;
     }
 
     .ramadan .right .form form button {
-        width: 100px;
-        padding: 10px;
+        width: 150px;
+        height: 45px;
     }
-    color: var(--yellowColor);
-    transform: translateY(-3px);
-
 }
 
 /* ============================
@@ -1262,6 +1229,7 @@ footer .logo img {
         font-size: 28px;
         display: flex;
         justify-content: end;
+        margin-left: 20px;
     }
     header {
         grid-template-columns: auto auto;
