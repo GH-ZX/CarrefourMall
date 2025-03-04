@@ -34,21 +34,31 @@ document.querySelectorAll('.quantity-btn').forEach(button => {
 const checkoutBtn = document.querySelector('.checkout-btn');
 if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
-        const address = document.querySelector('.delivery-address textarea').value.trim();
+        const addressTextarea = document.querySelector('.delivery-address textarea');
+        const address = addressTextarea.value.trim();
+        
         if (!address) {
             alert('يرجى كتابة عنوان التوصيل');
             return;
         }
     
-    // التحقق من اختيار طريقة الدفع
-    const selectedPayment = document.querySelector('.payment-method[style*="background: rgb(255, 224, 0)"]');
-    if (!selectedPayment) {
-        alert('يرجى اختيار طريقة الدفع');
-        return;
-    }
+        // التحقق من اختيار طريقة الدفع
+        const selectedPayment = document.querySelector('.payment-method[style*="background: rgb(255, 224, 0)"]');
+        if (!selectedPayment) {
+            alert('يرجى اختيار طريقة الدفع');
+            return;
+        }
 
-    alert('تم إتمام عملية الشراء بنجاح!\nسيتم التوصيل إلى العنوان: ' + address);
-});
+        alert('تم إتمام عملية الشراء بنجاح!\nسيتم التوصيل إلى العنوان: ' + address);
+        
+        // تفريغ حقل العنوان
+        addressTextarea.value = '';
+        
+        // إعادة تعيين طرق الدفع
+        document.querySelectorAll('.payment-method').forEach(m => 
+            m.style.background = 'white');
+    });
+}
 
 // اختيار طريقة الدفع
 document.querySelectorAll('.payment-method').forEach(method => {
@@ -58,4 +68,3 @@ document.querySelectorAll('.payment-method').forEach(method => {
         method.style.background = '#FFE000';
     });
 });
-}
