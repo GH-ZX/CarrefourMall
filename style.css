@@ -1,10 +1,6 @@
 /* ============================
    1. Imports & Basic Setup
    ============================ */
-
-   /*dfdff*/
-/*dfdff*/
-
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
 /* Reset & Base Styles */
@@ -27,12 +23,12 @@ html, body {
 /* Variables */
 :root {
     /* Colors */
-    --blueColor: #1a237e;        /* Deep rich blue */
-    --yellowColor: #ffd700;      /* Classic gold */
-    --greenColor: #4caf50;       /* Complementary green */
-    --whiteColor: #f5f5f5;       /* Soft white */
-    --grayColor: #37474f;        /* Blue-tinted gray */
-    --blue-gry-Color: #3949ab;   /* Medium blue */
+    --blueColor: #1a237e;        
+    --yellowColor: #ffd700;  
+    --greenColor: #4caf50;      
+    --whiteColor: #f5f5f5;
+    --grayColor: #37474f;       
+    --blue-gry-Color: #3949ab;   
 
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
@@ -366,6 +362,7 @@ header .links .ul-2 a:hover {
     margin: 50px;
     font-weight: bold;
 }
+
 .mall-section .left h2 {
     color: var(--yellowColor);
     font-size: 25px;
@@ -427,10 +424,10 @@ header .links .ul-2 a:hover {
 }
 
 .templates .words h2 {
-        font-size: 35px;
-        font-weight: bold;
-        color: var(--blueColor);
-        margin-bottom: 0.5rem;
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--blueColor);
+    margin-bottom: 0.5rem;
 }
 
 .templates .words .desc {
@@ -449,7 +446,7 @@ header .links .ul-2 a:hover {
     background-color: #f8f8f8;;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 .templates .main .temp {
@@ -522,9 +519,7 @@ header .links .ul-2 a:hover {
    7. Activities Section
    ============================ */
 .active {
-    margin-top: 50px;
-    padding: 40px 0;
-    background-color: var(--whiteColor);
+    margin: 50px 60px 70px; 
 }
 
 /* Title Styles */
@@ -643,6 +638,7 @@ header .links .ul-2 a:hover {
 .Offers {
     height: 80vh;
     padding: 2rem 0;
+    margin-bottom: 250px;
 }
 
 .offers-title {
@@ -898,11 +894,10 @@ header .links .ul-2 a:hover {
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-template-areas: left left left left left right right right right right;
-    margin-bottom: 90px;
+    margin: 80px 60px;
     background-color: #f8f8f8;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    padding: 20px;
     border: 5px solid;
     border-color: var(--blueColor) var(--blueColor) rgba(0, 236, 86, 0.56) rgba(0, 236, 86, 0.56);
 }
@@ -912,11 +907,12 @@ header .links .ul-2 a:hover {
     grid-column: 1 / 6;
     height: 60vh;
     margin-left: 60px;
+    margin-right: 10px;
     background-image: url(images/rama.png);
     background-size: cover;
     background-position: center;
     border-radius: var(--radius-md);
-    box-shadow: 0px 2px 5px rgb(62, 62, 62);
+    box-shadow: 0px 2px 4px rgb(62, 62, 62);
 }
 
 .ramadan .right {
@@ -924,9 +920,10 @@ header .links .ul-2 a:hover {
     grid-column: 6 / 11;
     height: 60vh;
     margin-right: 60px;
+    margin-left: 10px;
     background-color: rgba(0, 236, 86, 0.56);
     border-radius: var(--radius-md);
-    box-shadow: 0px 3px 4px rgb(62, 62, 62);
+    box-shadow: 0px 2px 4px rgb(62, 62, 62);
     padding: 20px;
 }
 
@@ -953,7 +950,10 @@ header .links .ul-2 a:hover {
     border: none;
     outline: none;
     padding: 15px;
-    color: black;
+}
+
+.ramadan .right .form form input:focus {
+    border: 2px solid var(--blueColor);
 }
 
 .ramadan .right .form form button {
@@ -968,12 +968,16 @@ header .links .ul-2 a:hover {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0px 2px 5px rgb(62, 62, 62);
+    box-shadow: 0px 2px 2px rgb(62, 62, 62);
     
 }
+
 .ramadan .right .form form button:hover { 
-    background-color: var(--yellowColor); 
+    color: var(--yellowColor); 
+    transform: translateY(-3px);
+    box-shadow: 0px 3px 3px rgb(62, 62, 62);
 }
+
 
 /* التنسيقات للشاشات المتوسطة والصغيرة */
 @media (max-width: 992px) {
@@ -1042,7 +1046,7 @@ header .links .ul-2 a:hover {
 footer {
     height: 25vh;
     width: 100%;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(7, 7, 68);
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-areas: Social Social Social Social links links links links links logo logo logo;
@@ -1080,7 +1084,6 @@ footer .Social-media .input input {
     border-radius: 10px;
     outline: none;
     border: none;
-    color: var(--blueColor);
     cursor: pointer;
 }
 
@@ -1095,17 +1098,12 @@ footer .Social-media .input button {
     outline: none;
     border: none;
     cursor: pointer;
-    color: var(--yellowColor);
-    background-color: #00008F;
+    color: black;
+    background-color: var(--yellowColor);
     font-weight: bold;
     transition: 0.2s ease;
     position: relative;
     right: 30px;
-}
-
-footer .Social-media .input button:hover {
-    background-color: var(--yellowColor);
-    color: var(--blueColor );
 }
 
 footer .links {
@@ -1121,7 +1119,8 @@ footer .links {
 footer .links a {
     font-size: 18px;
     font-weight: bold;
-    color: var(--yellowColor);
+    color: var(--whiteColor);
+    margin-bottom: 2px;
 }
 
 footer .links a:nth-child(1) {
@@ -1129,7 +1128,7 @@ footer .links a:nth-child(1) {
 }
 
 footer .links a:hover {
-    color: var(--blueColor);
+    color: var(--yellowColor);
 }
 
 footer .logo {
@@ -1393,11 +1392,28 @@ footer .logo img {
         background-color: var(--yellowColor);
         color: var(--blueColor);
     }
-}
-footer .logo img {
-    width: 100px;
-    position: relative;
-    left: 35%;
-    top: 25%;
-    align-items: center;
+    footer .logo img {
+        width: 100px;
+        position: relative;
+        left: 40%;
+        top: 25%;
+        align-items: center;
+    }
+
+    footer .links a {
+        gap: 10px;
+    }
+
+    .templates .main .temp {
+        height: 80px;
+    }
+
+    .active .words {
+        text-align: center;
+        align-content: center;
+    }
+
+    .active {
+        margin-top: 350px;
+    }
 }

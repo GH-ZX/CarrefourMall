@@ -80,7 +80,7 @@
 .payment-method {
     flex: 1;
     padding: 1rem;
-    border: 2px solid var(--yellowColor);
+    border: 2px solid var(--blueColor);
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
@@ -88,15 +88,15 @@
 }
 
 .payment-method:hover {
-    background: var(--yellowColor);
-    color: var(--blueColor);
+    background: var(--blueColor);
+    color: var(--yellowColor);
 }
 
 .checkout-btn {
     width: 100%;
     padding: 1rem;
-    background: var(--blueColor);
-    color: var(--yellowColor);
+    background-color: var(--yellowColor);
+    color: black;
     border: none;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -105,8 +105,8 @@
 }
 
 .checkout-btn:hover {
-    background: var(--yellowColor);
-    color: var(--blueColor);
+    background-color: var(--blueColor);
+    color: var(--yellowColor);
 }
 
 @media (max-width: 768px) {

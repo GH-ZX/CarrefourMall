@@ -47,5 +47,6 @@ window.addEventListener('resize', () => {
         button.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
     });
 
-
-
+      document.getElementById("donateBtn").addEventListener("click", function() {
+        this.textContent = "تم التبرع "; 
+    });
